@@ -1,8 +1,17 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Landing from './pages/Landing'
+import Auth from './pages/Auth'
+import Journal from './pages/Journal'
+
 function App() {
   return (
-    <div>
-      <h1>Here to Hear</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/journal" element={<Journal />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

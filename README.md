@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# Here to Hear
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A daily journaling and gratitude companion with AI-powered memory and growth tracking. A modern full stack application built with React, TypeScript, Node.js, Supabase, and the Claude AI API.
 
-Currently, two official plugins are available:
+> 🚧 This project is currently a work in progress.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## The Idea
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Most journaling apps let you write and forget. Here to Hear is different — it remembers.
 
-## Expanding the ESLint configuration
+Users write a daily journal entry, log three things they're grateful for, and receive an empathetic AI response that references past entries, notices patterns, and reflects their growth back to them over time. The goal is to create something that genuinely feels like a thoughtful companion, not just a text box.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Daily journaling** — write freely with a mood score each day
+- **Gratitude tracking** — log three things you're grateful for
+- **AI responses** — the Claude API responds to each entry with empathy and support
+- **AI memory** — past entries are passed as context so the AI can reference your history
+- **Visual timeline** — see your mood over time and gratitude streaks at a glance
+- **Growth reflections** — the AI surfaces patterns and progress across your entries
+- **Authentication** — secure sign up and login via Supabase Auth
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React 18, TypeScript, Vite |
+| Routing | React Router v6 |
+| Backend | Node.js, Express, TypeScript |
+| Database | Supabase (PostgreSQL) |
+| Authentication | Supabase Auth |
+| AI | Claude API (Anthropic) |
+| Deployment | Vercel |
+
+---
+
+## Project Status
+
+This project is actively being built. Current progress:
+
+- [ ] Project setup and folder structure
+- [ ] Landing page UI
+- [ ] Auth page UI (sign in / sign up)
+- [ ] Journal page UI with mood selector and gratitude inputs
+- [ ] Supabase database setup
+- [ ] Authentication (sign up, log in, log out)
+- [ ] Saving journal entries to the database
+- [ ] Claude API integration
+- [ ] AI memory system
+- [ ] Visual timeline
+- [ ] AI growth reflections
+- [ ] Deployment to Vercel
+
+---
+
+## Running Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR-USERNAME/HereToHear.git
+
+# Navigate into the project
+cd HereToHear
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
